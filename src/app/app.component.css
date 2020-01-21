@@ -1,0 +1,29 @@
+div{
+    color: crimson;
+}
+h2{
+    color: dodgerblue;
+    background-color: indianred;
+    
+}
+table, th, td {
+    border: 1px solid black;
+    margin-top: 34px;
+    margin-left: 500px;
+  }
+
+.validation{
+    color:red;
+}
+.btn-primary:hover
+{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.btn-trash{
+    color:red;
+}
+.btn-edit{
+    color:blue;
+}
