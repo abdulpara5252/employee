@@ -30,7 +30,7 @@ export class AppComponent {
    })
    onSubmit(){
      debugger
-     if (this.DesignationForm.controls['id'].value == 0) {
+     if (this.DesignationForm.controls['id'].value == 0 || this.DesignationForm.controls['id'].value == null) {
       this.NewId = this.NewId + 1;
     } else {
       this.NewId = this.DesignationForm.controls['id'].value;
@@ -38,7 +38,7 @@ export class AppComponent {
     // this.id = Guid.create();
     this.submitted = true;
     if (!this.DesignationForm.invalid) {
-      if (this.DesignationForm.controls['id'].value == 0) {
+      if (this.DesignationForm.controls['id'].value == 0 || this.DesignationForm.controls['id'].value == null) {
         let fields = {
 
           id: this.NewId,
@@ -49,6 +49,8 @@ export class AppComponent {
           Grade: this.DesignationForm.value.GradeValue,
         }
         this.designattionForm1.push(fields);
+        this.DesignationForm.reset();
+          
       } else {
         debugger
         this.designattionForm1[this.NewId - 1].firstName = this.DesignationForm.value.firstname;
@@ -75,6 +77,7 @@ export class AppComponent {
     this.DesignationForm.controls['DOB'].setValue(data.DOB);
     this.DesignationForm.controls['DesignationValue'].setValue(data.Designation);
     this.DesignationForm.controls['GradeValue'].setValue(data.Grade);
+
    }
    onDelete(i){ 
      debugger
